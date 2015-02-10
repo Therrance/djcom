@@ -14,7 +14,16 @@ from os.path import join
 
 os.path.abspath(os.path.dirname(__file__).decode('utf-8'))
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
+TEMPLATE_DIRS = [
+    TEMPLATE_PATH,
+]
 
+STATIC_PATH = os.path.join(BASE_DIR, 'static')
+STATIC_URL = '/static/'
+STATICFILES_DIR = (
+    STATIC_PATH,
+)
 
 
 # Quick-start development settings - unsuitable for production
@@ -76,9 +85,6 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
-TEMPLATE_DIRS = (
-    join(BASE_DIR, 'templates'),
-)
 
 LANGUAGE_CODE = 'en-us'
 
@@ -105,6 +111,3 @@ MEDIA_URL = '/static/'
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 
-STATICFILES_DIR = (
-    os.path.join(BASE_DIR, 'static/')
-)
