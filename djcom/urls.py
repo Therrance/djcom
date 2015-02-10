@@ -18,7 +18,7 @@ urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
 		#(r'^', include('catalog.urls')),
 		#(r'^cart/', include('cart.urls')),
-		(r'^catalog/$', 'preview.views.home'),
+	(r'^catalog/$', 'preview.views.home'),
 )
 
 #urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
