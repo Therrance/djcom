@@ -47,6 +47,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'catalog',
+    'utils',
     #'django.contrib.staticfiles',
 )
 
@@ -73,7 +74,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'djcom',
-        'USER': 'postgres',
+        'USER': 'djcom',
         'PASSWORD': 'q1w2e3',
         'HOST': 'localhost',
         'PORT': '',
@@ -109,4 +110,20 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, u'static'),
+)
+
+SITE_NAME = 'Zaponki Kiev Ua'
+META_KEYWORDS = 'Zaponki v Kieve'
+META_DESCRIPTION = 'Kupit zaponki v Kieve'
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+    'django.core.context_processors.static',
+    'django.core.context_processors.tz',
+    # 'django.core.context_processors.request',
+    'django.contrib.messages.context_processors.messages',
+    'utils.context_processor.djcom',
 )
