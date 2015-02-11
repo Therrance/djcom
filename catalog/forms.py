@@ -1,7 +1,8 @@
 from django import forms
-from djcom.catalog.models import Product
+from catalog.models import Product
 
-class ProductModelForm(forms.ModelForm):
+
+class ProductAdminForm(forms.ModelForm):
     class Meta:
         model = Product
 

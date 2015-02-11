@@ -12,18 +12,15 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 import os
 from os.path import join
 
-os.path.abspath(os.path.dirname(__file__).decode('utf-8'))
+#os.path.abspath(os.path.dirname(__file__).decode('utf-8'))
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
 TEMPLATE_DIRS = [
     TEMPLATE_PATH,
 ]
 
-STATIC_PATH = os.path.join(BASE_DIR, 'static')
-STATIC_URL = '/static/'
-STATICFILES_DIR = (
-    STATIC_PATH,
-)
+#STATIC_PATH = os.path.join(BASE_DIR, 'static')
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -43,12 +40,13 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
-    'djcom.catalog',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'catalog',
     #'django.contrib.staticfiles',
 )
 
@@ -99,15 +97,16 @@ USE_TZ = True
 _PATH = os.path.abspath(os.path.dirname(__file__))
 
 MEDIA_ROOT = ''
-MEDIA_URL = '/static/'
+#MEDIA_URL = '/static/'
 
-#STATIC_ROOT = os.path.join(_PATH, 'files', 'static')
-#STATIC_URL = '/static/'
-#STATICFILES_DIRS = (
-#    os.path.join(_PATH, 'static'),
+STATIC_URL = '/static/'
+#STATICFILES_DIR = (
+#    STATIC_PATH,
 #)
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.7/howto/static-files/
+#STATIC_ROOT = ''
+#PROJECT_PATH = os.path.realpath(os.path.dirname(__file__))
 
-
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, u'static'),
+)
